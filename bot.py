@@ -1,8 +1,24 @@
+import logging
+from flask import Flask
+from threading import Thread
 from pyrogram import Client, filters  
 from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton  
 from config import Config  
 from helpers import search_messages, correct_spelling  
 
+# Flask Server for Koyeb/Render
+app = Flask(__name__)
+
+@app.route('/')
+def home():
+    return "Bot is Running!"
+
+def run():
+    app.run(host="0.0.0.0", port=8080)
+
+Thread(target=run).start()
+
+# Bot Client  
 bot = Client("search_bot", api_id=Config.API_ID, api_hash=Config.API_HASH, bot_token=Config.BOT_TOKEN)
 
 # 🎬 Start Command  
@@ -49,5 +65,5 @@ async def search(client, message):
     else:
         await message.reply("❌ **No results found!**", quote=True)
 
-# বট চালু  
+# Bot Start  
 bot.run()
