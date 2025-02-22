@@ -14,7 +14,7 @@ async def start(client, message):
         [InlineKeyboardButton("✧ ᴄʀᴇᴀᴛᴏʀ ✧", url="https://t.me/prime_Nayem")]
     ]
     await message.reply_photo(
-        "https://example.com/start_image.jpg",  # এখানে তোমার স্টার্ট ইমেজ লিংক দাও
+        "https://envs.sh/XX.jpg",  # এখানে তোমার স্টার্ট ইমেজ লিংক দাও
         caption="👋 **Welcome!**\n🔍 Just send me a movie name, and I'll fetch it from the channel!",
         reply_markup=InlineKeyboardMarkup(buttons)
     )
